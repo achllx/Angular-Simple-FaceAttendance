@@ -1,0 +1,93 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #14181d;
+  color: #fefdff;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  .setting-option {
+    height: 100%;
+    &-logout {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1d1f24;
+        color: #4ffecb;
+        min-width: 80%;
+        padding: 24px 12px;
+        border-radius: 10px;
+        height: 16px;
+      }
+    }
+  }
+
+  .menu-footer {
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    bottom: 0;
+    padding: 0 16px 28px 16px;
+    display: flex;
+    justify-content: center;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      width: max-content;
+      gap: 16px;
+    }
+
+    &-attendance {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #4ffecb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 80px;
+
+      &-active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        min-width: 80px;
+        color: #4ffecb;
+      }
+    }
+
+    &-home-label {
+      font-size: 18px;
+    }
+
+    & span {
+      &.top-line-active {
+        display: block;
+        border-top: 2px solid #4ffecb;
+        width: 100%;
+      }
+    }
+  }
+}

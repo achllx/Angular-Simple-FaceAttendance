@@ -1,0 +1,80 @@
+<div class="profile">
+  <div class="profile-picture">
+    <img [src]="this.userPicture? this.getImageUrl() : 'https://placekitten.com/50/50'" alt="profile_picture" />
+  </div>
+  <div class="profile-data">
+    <div class="profile-data-name">{{ this.userName }}</div>
+    <div class="profile-data-status">{{ this.userStatus }}</div>
+  </div>
+</div>
+<div class="content">
+  <div class="content-widget">
+    <div class="content-widget-attendance">
+      <div class="content-widget-attendance-check">
+        <div class="widget-value-top">
+          <div class="label">{{ this.timeIn }}</div>
+          <div (click)="goToAttendance()"><mat-icon>launch</mat-icon></div>
+          
+        </div>
+        <div class="description">Clock In</div>
+      </div>
+      <div class="content-widget-attendance-check">
+        <div class="widget-value-top">
+          <div class="label">{{ this.timeOut }}</div>
+          <div (click)="goToAttendance()"><mat-icon>launch</mat-icon></div>
+        </div>
+        <div class="description">Clock Out</div>
+      </div>
+    </div>
+    <div class="content-widget-information">
+      <div class="content-widget-information-item">
+        <div class="widget-value-top">
+          <div class="label">{{ this.onTime }}%</div>
+          <div *ngIf="this.onTime === '-'">
+            <mat-icon>check_box_outline_blank</mat-icon>
+          </div>
+          <div *ngIf="this.onTime !== '-'"><mat-icon>check_box</mat-icon></div>
+        </div>
+        <div class="description">On Time</div>
+      </div>
+      <div class="content-widget-information-item">
+        <div class="widget-value-top">
+          <div class="label" style="display: flex; gap: 4px">
+            {{ this.totalDay }}
+            <div
+              style="
+                display: flex;
+                align-items: end;
+                height: 33px;
+                font-size: 16px;
+                color: #bbbdc2;
+              "
+            >
+              days
+            </div>
+          </div>
+          <mat-icon>date_range</mat-icon>
+        </div>
+        <div class="description">Total Attended</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-footer">
+  <div class="menu-footer-container">
+    <div class="menu-footer-item-active home" (click)="changeMenu('home')">
+    <span class="top-line-active"></span>
+    <mat-icon style="width: 30px; height: 30px; font-size: 30px;">home</mat-icon>
+    <div class="menu-footer-home-label">Home</div>
+  </div>
+  <div class="menu-footer-attendance"(click)="changeMenu('attendance')">
+    <img src="../../../assets/img/favicon.png" alt="">
+  </div>
+  <div class="menu-footer-item setting" (click)="changeMenu('setting')">
+    <span class="top-line"></span>
+    <mat-icon style="width: 30px; height: 30px; font-size: 30px;">settings</mat-icon>
+    <div class="menu-footer-home-label">settings</div>
+  </div>
+  </div>
+</div>

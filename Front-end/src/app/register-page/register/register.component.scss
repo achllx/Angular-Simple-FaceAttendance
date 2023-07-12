@@ -1,0 +1,141 @@
+@import '../../../assets/utils.scss';
+
+:host {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-2;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    background-color: $color-3;
+    color: $color-4;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-card {
+    border-radius: 15px;
+    width: 100%;
+
+    @include md {
+      width: 30%;
+    }
+
+    background-color: $color-4;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    &-header {
+      background-color: unset;
+      border-bottom: unset;
+
+      &-title {
+        font-size: xx-large;
+        font-weight: bold;
+        color: $color-1;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 90%;
+
+      &-alert {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        background-color: #FF597B;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-success {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        background-color: #ADE4DB;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-form {
+        width: 100%;
+
+        input {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+
+      button {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+button {
+  background-color: $color-3;
+  color: $color-5;
+  min-width: 80%;
+  padding: 24px 12px;
+
+  &:hover {
+    background-color: $color-2;
+  }
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: $color-3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  color: $color-5;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: $color-2;
+}

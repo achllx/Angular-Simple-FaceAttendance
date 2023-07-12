@@ -1,0 +1,25 @@
+<div class="setting-option">
+<div class="setting-option-logout">
+  <button mat-fab extended (click)="logout()" class="setting-option-logout-button">
+    <mat-icon>exit_to_app</mat-icon>logout
+</button>
+</div>
+</div>
+
+<div class="menu-footer">
+    <div class="menu-footer-container">
+      <div class="menu-footer-item home" (click)="changeMenu('home')">
+      <span class="top-line"></span>
+      <mat-icon style="width: 30px; height: 30px; font-size: 30px;">home</mat-icon>
+      <div class="menu-footer-home-label">Home</div>
+    </div>
+    <div class="menu-footer-attendance"(click)="changeMenu('attendance')">
+      <img src="../../../assets/img/favicon.png" alt="">
+    </div>
+    <div class="menu-footer-item-active setting" (click)="changeMenu('setting')">
+      <span class="top-line-active"></span>
+      <mat-icon style="width: 30px; height: 30px; font-size: 30px;">settings</mat-icon>
+      <div class="menu-footer-home-label">settings</div>
+    </div>
+    </div>
+  </div>

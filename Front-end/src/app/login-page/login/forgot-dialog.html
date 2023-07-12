@@ -1,0 +1,29 @@
+<div style=" color: #4ffecb; background-color: #070b0f; padding: 24px; display: flex; flex-direction: column; gap: 8px; justify-content: center; align-items: center;">
+  <h1 mat-dialog-title style="color: #4ffecb;">Forgot Password</h1>
+<br>
+<h4>{{msg}}</h4>
+  <form [formGroup]="forgotForm" style="display:flex; flex-direction: column; justify-content: center; align-items: center;">
+    <input type="text" class="form-control" 
+    formControlName="userEmail" placeholder="User Email"
+    type="email"
+    class="form-control"
+    style="width: 80%;height: 40px;
+    border-radius: 10px;"
+    ><br>
+    <input type="password" class="form-control" 
+    formControlName="newPassword" 
+    type="password"
+    class="form-control"
+    placeholder="New Password"
+    style="width: 80%;height: 40px;
+    border-radius: 10px;"
+    ><br>
+</form>
+  <div mat-dialog-actions>
+    <button style="display: flex; align-items: center; justify-content: center; background-color: #1d1f24;
+    color: #4ffecb; 
+    min-width: 80%;
+    padding: 24px 12px; border-radius: 10px; height: 16px;"
+    (click)="changePassword()">Change Password</button>
+  </div>
+</div>

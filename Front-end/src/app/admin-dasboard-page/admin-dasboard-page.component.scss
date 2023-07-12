@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .agency-name{
+    font-size: 32px;
+    font-weight: 600px;
+    color: #4ffecb;
+    
+  }
+
+  .user-table{
+    width: 90%;
+    margin-bottom: 64px;
+    margin-top: 64px;
+  }
+
+  .setting-option {
+    width: 20%;
+    &-logout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-button {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1d1f24;
+        color: #4ffecb;
+        min-width: 80%;
+        padding: 24px 12px;
+        border-radius: 10px;
+        height: 16px;
+      }
+    }
+  }
+}

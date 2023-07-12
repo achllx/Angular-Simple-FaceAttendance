@@ -1,0 +1,19 @@
+<div class="back-icon" (click)="backBtn()">
+    <mat-icon style="font-size: 40px; width: 40px; height: 40px;">keyboard_backspace</mat-icon>
+</div>
+<div style="display: flex; flex-direction: column;">
+    <div class="record" [style.border]="validation===undefined? 
+    '10px solid #fefdff': validation? 
+    '10px solid #4ffecb' : '10px solid #f44336'">
+    <div class="record-video-camera">
+        <video id="video" width="600" height="600" autoplay></video>
+    </div>
+</div>
+<div class="status-record">
+    <div class="status-record-message">
+        {{message}}
+    </div>
+</div>
+</div>
+
+

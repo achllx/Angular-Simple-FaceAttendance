@@ -1,0 +1,49 @@
+<div *ngIf="loginUser; else loginAgency" class="container">
+    <mat-card class="container-card">
+        <mat-card-header class="container-card-header">
+            <mat-card-title class="container-card-header-title">User</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="container-card-content">
+            <div *ngIf="errormsg" class="container-card-content-alert">
+                {{errormsg}}
+            </div>
+            <form [formGroup]="userForm" class="container-card-content-form">
+                <input type="text" class="form-control" formControlName="userid" placeholder="User ID"
+                    (input)="resetMessage()"><br>
+                <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                    (input)="resetMessage()"><br>
+            </form>
+            <!-- <div class="container-card-content-forgot-password"
+            (click)="openDialog()">
+                Forgot Password
+            </div> -->
+            <div class="container-card-content-button-row">
+                <button mat-fab extended (click)="backButton()">
+                    Back
+                </button>
+                <button mat-fab extended (click)="userSubmit()">
+                    Login
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<ng-template #loginAgency>
+    <mat-card class="container-card">
+        <mat-card-header class="container-card-header">
+            <mat-card-title class="container-card-header-title">Your Agency</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="container-card-content">
+            <div *ngIf="errormsg" class="container-card-content-alert">
+                {{errormsg}}
+            </div>
+            <form [formGroup]="agencyForm" class="container-card-content-form">
+                <input type="text" class="form-control" formControlName="agencyCode" placeholder="Agency Code"><br>
+            </form>
+            <button mat-fab extended (click)="agencySubmit()" class="container-card-content-button">
+                Next
+            </button>
+        </mat-card-content>
+    </mat-card>
+</ng-template>

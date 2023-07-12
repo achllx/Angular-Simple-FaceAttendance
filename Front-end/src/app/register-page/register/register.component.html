@@ -1,0 +1,65 @@
+<div class="button-row">
+  <button mat-raised-button
+    [style]="regisUser? 'box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%); outline: none; opacity: unset;': 'opacity: 0.5'"
+    (click)="changeTab('user')">User</button>
+  <button mat-raised-button
+    [style]="!regisUser? 'box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%); outline: none; opacity:unset;': 'opacity: 0.5'"
+    (click)="changeTab('agency')">Agency</button>
+</div>
+
+<div *ngIf="regisUser; else regisAgency" class="container">
+  <mat-card class="container-card">
+    <mat-card-header class="container-card-header">
+      <mat-card-title class="container-card-header-title">Register User</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="container-card-content">
+      <div *ngIf="errormsg" class="container-card-content-alert">
+        {{errormsg}}
+      </div>
+      <div *ngIf="successmsg" class="container-card-content-success">
+        {{successmsg}}
+      </div>
+      <form [formGroup]="userForm" class="container-card-content-form">
+        <input type="text" class="form-control" formControlName="fullname" placeholder="Full Name"
+          (input)="resetMessage()"><br>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password"
+          (input)="resetMessage()"><br>
+        <input type="text" class="form-control" formControlName="agencyid" placeholder="Agency ID"
+          (input)="resetMessage()"><br>
+        <input type="text" class="form-control" formControlName="status" placeholder="Status"
+          (input)="resetMessage()"><br>
+        <input type="text" class="form-control" formControlName="email" placeholder="Email"
+          (input)="resetMessage()"><br>
+          <input type="file" name="files" formControlName="file" multiple #fileInput>
+      </form>
+      <button mat-fab extended (click)="userSubmit()">
+        Register
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #regisAgency>
+  <mat-card class="container-card">
+    <mat-card-header class="container-card-header">
+      <mat-card-title class="container-card-header-title">Register Agency</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="container-card-content">
+      <div *ngIf="errormsg" class="container-card-content-alert">
+        {{errormsg}}
+      </div>
+      <div *ngIf="successmsg" class="container-card-content-success">
+        {{successmsg}}
+      </div>
+      <form [formGroup]="agencyForm" class="container-card-content-form">
+        <input type="text" class="form-control" formControlName="agencyName" placeholder="Agency Name"><br>
+        <input type="text" class="form-control" formControlName="agencyCode" placeholder="Agency Code"><br>
+        <input type="text" class="form-control" formControlName="latitude" placeholder="Latitude coordinate"><br>
+        <input type="text" class="form-control" formControlName="longitude" placeholder="Longitude coordinate"><br>
+      </form>
+      <button mat-fab extended (click)="agencySubmit()">
+        Register
+      </button>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

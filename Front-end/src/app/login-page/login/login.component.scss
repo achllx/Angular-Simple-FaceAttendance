@@ -1,0 +1,129 @@
+@import '../../../assets/utils.scss';
+
+:host {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:  #070b0f;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-card {
+    border-radius: 15px;
+    min-width: 312px;
+    width: 50%;
+    color: #4ffecb;
+    background-color: #14181d;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    &-header {
+      background-color: unset;
+      border-bottom: unset;
+
+      &-title {
+        font-size: xx-large;
+        font-weight: bold;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 90%;
+
+      &-alert {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        background-color: #FF597B;
+        width: 100%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-success {
+        margin-top: -15px;
+        margin-bottom: 15px;
+        background-color: #ADE4DB;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-form {
+        width: 100%;
+
+        input {
+          width: 100%;
+          height: 40px;
+          border-radius: 10px;
+        }
+      }
+
+      &-button-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 55%;
+      }
+
+      button {
+        width: 40px;
+        font-weight: bold;
+
+        @include md {
+          width: 70px;
+        }
+      }
+
+      &-button {
+        width: 150px;
+        font-weight: bold;
+      }
+
+      &-forgot-password{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+button {
+  background-color: #1d1f24;
+  color: #4ffecb;
+  min-width: 80%;
+  padding: 24px 12px;
+
+  &:hover {
+    background-color: #4ffecc38;
+  }
+}

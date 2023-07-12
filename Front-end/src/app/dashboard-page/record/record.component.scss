@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-color: #14181d;
+  color: #fefdff;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  .record {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    &-video-camera {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      -webkit-mask-image: -webkit-radial-gradient(
+        circle,
+        white 100%,
+        black 100%
+      );
+
+      & video {
+        position: absolute;
+        top: -50px;
+        left: -125px;
+      }
+    }
+  }
+
+  .status-record{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    &-message{
+      font-size: 32px;
+      color: #fefdff;
+    }
+  }
+
+  .back-icon {
+    position: absolute;
+    top: 32px;
+    left: 8px;
+  }
+}

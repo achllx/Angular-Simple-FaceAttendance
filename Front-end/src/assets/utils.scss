@@ -1,0 +1,60 @@
+//break point
+$bp-xl: 1048px;
+$bp-lg: 848px;
+$bp-md: 748px;
+$bp-sm: 576px;
+$bp-xs: 361px;
+
+//color
+$color-1: #17252A;
+$color-2: #2B7A78;
+$color-3: #3AAFA9;
+$color-4: #DEF2F1;
+$color-5: #FEFFFF;
+
+//font
+@mixin text-styling($font-size, $line-height, $font-wight){
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-wight;
+}
+
+@mixin text-small {
+  @include text-styling(14px, 22px, 600);
+}
+
+@mixin text-medium {
+  @include text-styling(16px, 24px, 600);
+}
+
+@mixin text-large {
+  @include text-styling(18px, 24px, 600);
+}
+
+//media breakpoint
+@mixin xs {
+  @media (min-width: $bp-xl){
+    @content
+  }
+}
+@mixin lg {
+  @media (min-width: $bp-lg){
+    @content
+  }
+}
+@mixin md {
+  @media (min-width: $bp-md){
+    @content
+  }
+}
+@mixin sm {
+  @media (min-width: $bp-sm){
+    @content
+  }
+}
+@mixin xs {
+  @media (min-width: $bp-xs){
+    @content
+  }
+}
+

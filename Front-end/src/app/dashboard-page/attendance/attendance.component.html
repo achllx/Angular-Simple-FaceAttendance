@@ -1,0 +1,112 @@
+<div class="content">
+  <div class="attendance-monitor">
+    <div class="attendance-monitor-progress">
+      <mat-progress-spinner
+        style="height: 195px; width: 195px"
+        class="example-margin"
+        [mode]="mode"
+        [value]="value"
+      >
+      </mat-progress-spinner>
+      <div class="attendance-monitor-progress-label">
+        {{ this.elapsedTime }}
+      </div>
+    </div>
+
+    <div class="content-widget-attendance">
+      <div class="content-widget-attendance-check" 
+      [class.disabled]="this.timeIn !== '--:--'"
+        (click)="
+          this.timeIn === '--:--' ? takeRecord('in') : $event.stopPropagation()
+        ">
+        <div
+          class="widget-value-top"
+          style="display: flex; justify-content: center"
+        >
+          <div class="label">{{ this.timeIn }}</div>
+        </div>
+        <div class="description" style="display: flex; justify-content: center">
+          Clock In
+        </div>
+      </div>
+      <div
+        class="content-widget-attendance-check"
+        [class.disabled]="this.timeIn === '--:--'"
+        (click)="
+          this.timeIn !== '--:--' ? takeRecord('out') : $event.stopPropagation()
+        "
+      >
+        <div
+          class="widget-value-top"
+          style="display: flex; justify-content: center"
+        >
+          <div class="label">{{ this.timeOut }}</div>
+        </div>
+        <div class="description" style="display: flex; justify-content: center">
+          Clock Out
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attendance-table">
+    <div class="mat-elevation-z8" style="width:90%">
+      <table mat-table [dataSource]="dataSource">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="in">
+          <th mat-header-cell *matHeaderCellDef> Clock In </th>
+          <td mat-cell *matCellDef="let element"> {{element.in}} </td>
+        </ng-container>
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="out">
+          <th mat-header-cell *matHeaderCellDef> Clock Out </th>
+          <td mat-cell *matCellDef="let element"> {{element.out}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[3]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements"
+                     style="background-color: #14181d; color: #fefdff;">
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+<div class="menu-footer">
+  <div class="menu-footer-container">
+    <div class="menu-footer-item home" (click)="changeMenu('home')">
+      <span class="top-line"></span>
+      <mat-icon style="width: 30px; height: 30px; font-size: 30px"
+        >home</mat-icon
+      >
+      <div class="menu-footer-home-label">Home</div>
+    </div>
+    <div class="menu-footer-attendance" (click)="changeMenu('attendance')">
+      <img src="../../../assets/img/favicon.png" alt="" />
+    </div>
+    <div class="menu-footer-item setting" (click)="changeMenu('setting')">
+      <span class="top-line"></span>
+      <mat-icon style="width: 30px; height: 30px; font-size: 30px"
+        >settings</mat-icon
+      >
+      <div class="menu-footer-home-label">settings</div>
+    </div>
+  </div>
+</div>
